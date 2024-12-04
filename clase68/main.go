@@ -28,7 +28,7 @@ func main(){
 	// 	f.Println("Imprimio el ok" , ok , v)
 	// }
 
-	// m["Eduardo"] = 25
+	m["Eduardo"] = 25
 	// f.Println(m["Eduardo"])
 	// f.Println(m)
 
@@ -42,5 +42,16 @@ func main(){
 
 	for clave , valor := range m {
 		f.Println(clave , valor)
+	}
+
+	delete( m ,"Batman")
+	f.Println(m)
+	
+	if v , ok := m["asd"] ; ok {
+		f.Println("Se elimino elemento : " , v )
+		delete(m , "Eduardo")
+		f.Println(m)
+	}else{
+		f.Println("No se elimino nada")
 	}
 }
