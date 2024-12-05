@@ -23,4 +23,5 @@ func main(){
 			f.Println("Color " , i+1 , " fue " , v[i])
 		}
 	}
+
 }
