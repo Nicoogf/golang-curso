@@ -32,5 +32,5 @@ func sumaPares (f func(xi ...int) int , vi ...int) int {
 		}
 	}
 
-	return f ( y... )
+	return f( y... )
 } 
