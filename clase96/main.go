@@ -5,13 +5,16 @@ import (
 )
 
 func main() {
-	foo()
-	func ()  {
-		f.Println("Ejecucion de funcion anonima")
-	}()
+	x := practica()
+	
+	valor := x()
+
+	f.Println(valor)
 }
 
 
-func foo () {
-	f.Println("Ejecucion de la funcion Foo")
+func practica() func() int {
+	return func() int {
+		return 1942
+	}
 }
