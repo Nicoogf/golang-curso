@@ -1,0 +1,22 @@
+[
+    {
+        "Nombre": "Eduar",
+        "Apellido": "Tua",
+        "Edad": 32,
+        "Dichos": [
+            "Dale boca",
+            "Que hace fabra",
+            "Como va a jugar de titular ramirez"
+        ]
+    },
+    {
+        "Nombre": "Nicolas",
+        "Apellido": "Gonzale",
+        "Edad": 78,
+        "Dichos": [
+            "Ahboe",
+            "Que digo",
+            "falso"
+        ]
+    }
+]

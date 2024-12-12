@@ -47,6 +47,8 @@ func main (){
 
 	for _ , valor := range usuarios {
 		f.Println(valor.Nombre , valor.Apellido , valor.Edad)
+
+		sort.Strings(valor.Dichos)
 		for _ , valor := range valor.Dichos{
 			f.Println("\t - " ,valor)
 		}
