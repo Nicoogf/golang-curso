@@ -4,30 +4,29 @@ import (
 	f "fmt"
 	"runtime"
 	"sync"
-	
+	"sync/atomic"
 )
 
 func main() {
-	f.Println("Numero de CPUs : " , runtime.NumCPU() )
-	f.Println("Numero de Goroutines : " , runtime.NumGoroutine() )
-	contador := 0
+	f.Println("Numero de CPUs : ", runtime.NumCPU())
+	f.Println("Numero de Goroutines : ", runtime.NumGoroutine())
+	var contador int64
 
 	const gs = 100
 	var wg sync.WaitGroup
 	wg.Add(gs)
 
-	for i := 0 ; i < gs ; i++ {
+	for i := 0; i < gs; i++ {
 		go func() {
-			v := contador
-			v++		
+			atomic.AddInt64(&contador, 1)
 			runtime.Gosched()
-			contador = v
+			f.Println("Contador : ", atomic.LoadInt64(&contador))
 			wg.Done()
 		}()
-		f.Println("Numero de Goroutines : " , runtime.NumGoroutine() )
+		f.Println("Numero de Goroutines : ", runtime.NumGoroutine())
 	}
 
 	wg.Wait()
-	f.Println("Cuenta : " , contador )
+	f.Println("Cuenta : ", contador)
 
 }
