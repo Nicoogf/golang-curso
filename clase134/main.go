@@ -8,7 +8,6 @@ import (
 )
 
 func main() {
-	saldo := 45 
 	f.Println("Numero de CPUs : ", runtime.NumCPU())
 	f.Println("Numero de Goroutines : ", runtime.NumGoroutine())
 	var contador int64
