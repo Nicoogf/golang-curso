@@ -1,26 +1,25 @@
 package main
 
 import(
-	"fmt"
-	_"runtime"
+	f "fmt"
 )
 
-func main(){
-	ca :=  make( chan int )
+func main() {
+	c := make(chan int)
 
-	go enviar(ca)
+	go enviar(c)
 
-	go recibir(ca)
+	recibir(c)
 
-	fmt.Println("Finalizado.")
-
+	f.Println("Finalizado")
 }
 
-
-func enviar(c chan<- int){
+func enviar(c chan<-int ){
 	c <- 42
 }
 
-func recibir(c <-chan int){
-	fmt.Println(<- c)
+func recibir(c <-chan int ){
+	f.Println(<-c)
 }
+
+
